@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import httpService from "../services/httpService";
+import Product from "../components/Product";
 
 const Home = () => {
 
@@ -29,13 +30,7 @@ const Home = () => {
 
             <h2>Our Products</h2>
 
-            {products ? (products.map(product => (
-                <div key={product.id}>
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                    <p>{product.price}</p>
-                </div>)
-            )): ""}
+            {products ? (products.map(product => <Product key={product.id} product={product} />)): ""}
         </div>
     );
 }
