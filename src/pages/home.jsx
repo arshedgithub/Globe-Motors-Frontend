@@ -29,8 +29,10 @@ const Home = () => {
             <p>Feel free to explore our range of vehicles.</p>
 
             <h2>Our Products</h2>
-
-            {products ? (products.map(product => <Product key={product.id} product={product} />)): ""}
+            
+            <div className="productList">
+                {products ? (products.map(product => <Product key={product.id} product={product} />)) : ""}
+            </div>
         </div>
     );
 }
