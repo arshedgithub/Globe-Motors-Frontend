@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import httpService from "../services/httpService";
-import Product from "../components/Product";
+import ProductCard from "../components/ProductCard";
+import { Stack } from "@mui/material";
 
 const Home = () => {
 
@@ -29,9 +30,11 @@ const Home = () => {
             <p>Feel free to explore our range of vehicles.</p>
 
             <h2>Our Products</h2>
-            
+
             <div className="productList">
-                {products ? (products.map(product => <Product key={product.id} product={product} />)) : ""}
+                <Stack spacing={1} direction="row">
+                    {products ? (products.map(product => <ProductCard key={product.id} product={product} />)) : ""}
+                </Stack>
             </div>
         </div>
     );
