@@ -23,20 +23,22 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Welcome to Globe Motors</h1>
-            <p>We are a leading automotive manufacturing company specializing in luxury vehicles.</p>
-            <p>Our mission is to create exceptional vehicles that inspire and delight our customers.</p>
-            <p>Feel free to explore our range of vehicles.</p>
-
-            <h2>Our Products</h2>
-
-            <div className="productList">
-                <Stack spacing={1} direction="row">
-                    {products ? (products.map(product => <ProductCard key={product.id} product={product} />)) : ""}
-                </Stack>
+        <>
+            <div style={{textAlign: "center"}}>
+                <h2>Welcome to Globe Auto Parts</h2>
+                <p>We are a leading automotive manufacturing company specializing in luxury vehicles. Our mission is to create exceptional vehicles that inspire and delight our customers. Feel free to explore our range of vehicles.</p>
             </div>
-        </div>
+            <div>
+
+                <h3>Our Products</h3>
+
+                <div className="productList">
+                    <Stack spacing={1} direction="row">
+                        {products ? (products.map(product => <ProductCard key={product.id} product={product} />)) : ""}
+                    </Stack>
+                </div>
+            </div>
+        </>
     );
 }
 

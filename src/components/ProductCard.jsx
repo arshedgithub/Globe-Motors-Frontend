@@ -1,7 +1,8 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
-
+        
     const { name, price, product_brand: brand } = product;
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -12,7 +13,7 @@ const ProductCard = ({ product }) => {
                 image="./products/headlamp.webp"
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                     {name}
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
@@ -23,8 +24,8 @@ const ProductCard = ({ product }) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Button size="small">Add to Cart</Button>
+                <Button size="small">View</Button>
             </CardActions>
         </Card>
     );
